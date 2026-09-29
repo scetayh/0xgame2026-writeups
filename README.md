@@ -30,10 +30,10 @@
 3. 模糊二维码
 4. 粗心的小x
 5. [奶蛙的博客](week1/multi-class/2/index.md)
-6. ~~[小伊卡...不胖...不胖...](week1/misc/6/index.md)~~
-7. ~~[Treasure_island](week1/misc/7/index.md)~~
+6. [小伊卡...不胖...不胖...](week1/misc/6/index.md)
+7. [Treasure_island](week1/misc/7/index.md)
 8. [深夜值班室](week1/misc/8/index.md)
-9. ~~[Interesting_ppt](week1/misc/9/index.md)~~
+9. [Interesting_ppt](week1/misc/9/index.md)
 10. [Strange_lsb](week1/misc/10/index.md)
 
 ## [Reverse](week1/reverse)
@@ -49,7 +49,7 @@
 ## [Pwn](week1/pwn)
 
 1. *[亦步亦趋](week1/pwn/1/index.md)*
-2. ！？数学基础？！
+2. [！？数学基础？！](week1/pwn/2/index.md)
 3. 两次回响
 4. 保持沉默
 5. 三扇门

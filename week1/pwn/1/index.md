@@ -12,9 +12,7 @@
 
 ![](3.png)
 
-实际上 Level 1 我 `nc` 很多次都发现两个地址之间的距离恒为 28 字节，所以不算棘手，用废案里的方法还是能过。下面要解决的是 Level 2 的问题。先双击 `level2` 函数看看：
-
-![](4.png)
+实际上 Level 1 通过多次 `nc` 都被发现两个地址之间的距离恒为 28 字节，所以不算棘手，用废案里的方法还是能过。下面要解决的是 Level 2 的问题。先双击 `level2` 函数看看：
 
 ```asm
 ; Attributes: bp-based frame
@@ -62,3 +60,72 @@ retn
 level2 endp
 ```
 
+![](4.png)
+
+按 F5 查看伪代码：
+
+```c
+__int64 level2()
+{
+  _BYTE v1[32]; // [rsp+0h] [rbp-20h] BYREF
+
+  puts(s: "\n==============================================");
+  puts(s: "[Level 2] The real challenge: control flow! (Ret2Text)");
+  puts(s: "==============================================");
+  puts(s: "This time , you need to change the return address");
+  printf(format: "I have prepared backdoor for you. 'win', It's addr about: %p\n", win);
+  printf(format: "Now input your final Payload:\n> ");
+  return gets(a1: v1);
+}
+```
+
+![](5.png)
+
+这里确实是要打印 `win` 的地址。但是随后要做什么呢？看看 `win` ：
+
+```
+; Attributes: bp-based frame
+
+; int win()
+public win
+win proc near
+; __unwind {
+endbr64
+push    rbp
+mov     rbp, rsp
+lea     rax, s          ; "Congratulations! You have hijacked the "...
+mov     rdi, rax        ; s
+call    _puts
+lea     rax, command    ; "/bin/sh"
+mov     rdi, rax        ; command
+call    _system
+nop
+pop     rbp
+retn
+; } // starts at 1209
+win endp
+```
+
+![](6.png)
+
+注释已经证明了系统调用：
+
+```
+lea     rax, command    ; "/bin/sh"
+```
+
+伪代码也这样显示：
+
+```c
+int win()
+{
+  puts(s: "Congratulations! You have hijacked the control flow!");
+  return system(command: "/bin/sh");
+}
+```
+
+![](7.png)
+
+思路已经明确了，首先更正 [**废案**](old/index.md) 错误，然后拿到 Shell 环境，最后扫盘获取 flag 。
+
+脚本具体编写过程看 [send.sh](send.sh) 。

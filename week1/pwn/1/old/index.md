@@ -29,6 +29,8 @@ Now input your Payload:
 magic = 0xdeadbeef;
 ```
 
+（魔数？）
+
 右边改写成小端序（这些要点实际上在输入错误之后的 hint 中有提示）是 `ef be ad de`。所以 **第二步要填入 `\xef\xbe\xad\xde`** 。
 
 **最后加一个换行 `\n`** 。
