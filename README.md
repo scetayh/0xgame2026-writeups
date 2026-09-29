@@ -9,32 +9,29 @@
 
 ### [多分类](week1/multi-class)
 
-1. 粗心的小x
+1. [欢迎来到CTF的世界！](week1/multi-class/1/index.md)
 2. [奶蛙的博客](week1/multi-class/2/index.md)
+3. 粗心的小x
 
 ### [Web](week1/web)
 
 1. [渲染如呼吸一样简单](week1/web/1/index.md)
 2. ez_64
 3. [漏风的沙箱](week1/web/3/index.md)
-4. [奶蛙的博客](week1/multi-class/2/index.md)
+4. ~~[错位的签名](week1/web/4/index.md)~~
 5. [一切的开始](week1/web/5/index.md)
 6. [ATP代码实验](week1/web/6/index.md)
 7. ~~[pollute the key](week1/web/7/index.md)~~
-8. ~~[错位的签名](week1/web/8/index.md)~~
 
 ## [Misc](week1/misc)
 
-1. [欢迎来到CTF的世界！](week1/misc/1/index.md)
-2. [ez_traffic](week1/misc/2/index.md)
-3. 模糊二维码
-4. 粗心的小x
-5. [奶蛙的博客](week1/multi-class/2/index.md)
-6. [小伊卡...不胖...不胖...](week1/misc/6/index.md)
-7. [Treasure_island](week1/misc/7/index.md)
-8. [深夜值班室](week1/misc/8/index.md)
-9. [Interesting_ppt](week1/misc/9/index.md)
-10. [Strange_lsb](week1/misc/10/index.md)
+1. [ez_traffic](week1/misc/1/index.md)
+2. 模糊二维码
+3. [Strange_lsb](week1/misc/3/index.md)
+4. [Interesting_ppt](week1/misc/4/index.md)
+5. [小伊卡...不胖...不胖...](week1/misc/5/index.md)
+6. [Treasure_island](week1/misc/6/index.md)
+7. [深夜值班室](week1/misc/7/index.md)
 
 ## [Reverse](week1/reverse)
 
@@ -71,10 +68,10 @@
 
 1. 至此,我将独自前行...
 2. Spring的旅程-1
+3. Spring的旅程-2
 
 ## [AI](week1/ai)
 
 1. ez_pytorch
-2. 粗心的小x
-3. Magical Large Potato!
-4. ~~[hd_pytorch?](week1/ai/4)~~
+2. Magical Large Potato!
+3. ~~[hd_pytorch?](week1/ai/3)~~
