@@ -79,7 +79,38 @@ scetayh@yuprae-gentoo ~/Downloads $ identify ~/Pictures/Tarikko-ScetayhChan_avat
 
 查得报错含义为 IHDR 中的数据和它后面保存的 CRC 校验值对不上。让人联想到不吻合的可能恰恰是像素记录值，因为题干说 **猪一屁股把图坐扁了** 。高明显小于宽，而且往往是竖直方向才能被一屁股压扁。如果是宽度的问题甚至宽高都有问题就麻烦了，可能需要枚举。
 
-下面用 [脚本](lie_detect.py) 解压 IDAT 实测。过程看注释。
+下面用脚本解压 IDAT 实测。过程看注释。
+
+```python
+import zlib, struct
+
+data = open('fat_Y1k@.png','rb').read()
+# 按照笔记：
+# 签名 0 ~ 7 bytes
+# Length 8 ~ 11 bytes
+# Type IHDR 12 ~ 15 bytes
+# ! Width 16 ~ 19 bytes
+# ! Height 20 ~ 23 bytes
+#
+# 要读 16 ~ 23 bytes
+w, h = struct.unpack('>II', data[16:24])
+
+# 收集所有 IDAT 的 Payload
+idat = b''
+pos = 8 # 跳过签名
+while pos < len(data):
+    ln, typ = struct.unpack('>I4s', data[pos:pos+8])
+    if typ == b'IDAT':
+        idat += data[pos+8:pos+8+ln]
+    pos += 12 + ln
+
+raw = zlib.decompress(idat)
+
+print('bytes:', len(raw))
+print('IHDR height:', h)
+print('bytes per line:', 1 + w*3)
+print('factual lines:', len(raw) // (1 + w*3))
+```
 
 跑一下看看：
 
@@ -106,6 +137,32 @@ PNG 签名清晰可辨。
 
 这四位就是 20 ~ 23 bytes 。到时候把它们从 `00 00 05 00` (1280) 改成 `00 00 05 DC` (1500) ，并修正 CRC 。
 
-[脚本](fix.py) 在此。运行后得到：
+[脚本](fix.py) 在此：
+
+```python
+import binascii
+
+with open("fat_Y1k@.png","rb") as f:
+    buf = bytearray(f.read())
+
+buf[20] = 0x00
+buf[21] = 0x00
+buf[22] = 0x05
+buf[23] = 0xDC
+
+# 又按照笔记：
+# 签名 0 ~ 7 bytes
+# Length 8 ~ 11 bytes
+# ! Type IHDR 12 ~ 15 bytes
+# ! Payload 16 ~ 28 bytes
+# CRC 29 ~ 32 bytes
+new_crc = binascii.crc32(buf[12 : 29]) & 0xFFFFFFFF
+buf[29:33] = new_crc.to_bytes(4, byteorder='big')
+
+with open("fixed.png","wb") as out:
+    out.write(buf)
+```
+
+运行后得到：
 
 ![](fixed.png)

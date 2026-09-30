@@ -12,7 +12,21 @@
 
 ![](1.png)
 
-所有 entry 的地址都是 `/page?id=1` 这种。用 Shell 脚本 [`compose_fragments.sh`](compose_fragments.sh) 组合得到：
+所有 entry 的地址都是 `/page?id=1` 这种。用 Shell ：
+
+```bash
+readonly URL='http://8000-62a68483-e567-4b44-9923-adea1464e2d0.challenge.ctfplus.cn/page?id='
+
+for ((i=1; i<=124; i++)); do
+    lin_content="$(curl -sS "$URL"$i | grep '<span class="flag-fragment">')"
+    rest=${lin_content#*>}
+    fragment=${rest%%<*}
+    printf '%s' "$fragment"
+done
+printf '\n'
+```
+
+组合得到：
 
 ```bash
 scetayh@yuprae-gentoo ~/Projects/0xgame2026-writeups $ cd week1/misc/5/
@@ -36,7 +50,7 @@ H4sIAAAAAAAA/wTAwQ2AMAgF0JXaADM4xo9BbQ&#43;UA0GrMe7uK/eyjv11rpNhfLYu0OBpAvYNWsxI
   <small>这其实是出题过程；解题要反着来</small>
 </p>
 
-解码后写入 [`flag.gz`](flag.gz) 文件：
+解码后写入 `flag.gz` 文件：
 
 ```bash
 printf '%s' 'H4sIAAAAAAAA/wTAwQ2AMAgF0JXaADM4xo9BbQ&#43;UA0GrMe7uK/eyjv11rpNhfLYu0OBpAvYNWsxIU0AXxYMjuA3yBGsUEWQnVE8Kp/z&#43;AAAA//&#43;XJ0P/SwAAAA==' \

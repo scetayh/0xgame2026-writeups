@@ -75,7 +75,7 @@ PartName="/ppt/slides/slide4.xml"
 key=0xGame_2026
 ```
 
-按照惯例，密文和密钥都应该转为二进制，密钥以循环方式与密文做 XOR 运算，最终解得：
+按照惯例，密文和密钥都应该转为二进制，密钥以循环方式与密文做 XOR 运算。找个网页工具，最终解得：
 
 ```
 MHhHYW1le3BwdHhfMXNfanVzdF9hX3oxcF80bmRfbWV0YWRhdGFfbjN2ZXJfYjN0cjR5c195MHV9

@@ -36,12 +36,13 @@
 ## [Reverse](week1/reverse)
 
 1. [signin](week1/reverse/1/index.md)
-2. ez_upx
-3. 欸？云朵
-4. 旧时代的信号
-5. z3_solver
-6. Guess
-7. ez_flower
+2. [ez_upx](week1/reverse/2/index.md)
+3. [欸？云朵](week1/reverse/3/index.md)
+4. *[欸？云朵のrevenge](week1/reverse/4/index.md)*
+5. 旧时代的信号
+6. z3_solver
+7. Guess
+8. ez_flower
 
 ## [Pwn](week1/pwn)
 
@@ -72,6 +73,6 @@
 
 ## [AI](week1/ai)
 
-1. ez_pytorch
-2. Magical Large Potato!
-3. ~~[hd_pytorch?](week1/ai/3/index.md)~~
+1. [ez_pytorch](week1/ai/1/index.md)
+2. [Magical Large Potato!](week1/ai/2/index.md)
+3. [hd_pytorch?](week1/ai/3/index.md)
