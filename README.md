@@ -16,9 +16,9 @@
 ### [Web](week1/web)
 
 1. [渲染如呼吸一样简单](week1/web/1/index.md)
-2. ez_64
+2. [ez_64](week1/web/2/index.md)
 3. [漏风的沙箱](week1/web/3/index.md)
-4. ~~[错位的签名](week1/web/4/index.md)~~
+4. [错位的签名](week1/web/4/index.md)
 5. [一切的开始](week1/web/5/index.md)
 6. [ATP代码实验](week1/web/6/index.md)
 7. ~~[pollute the key](week1/web/7/index.md)~~
@@ -68,10 +68,10 @@
 
 1. 至此,我将独自前行...
 2. Spring的旅程-1
-3. Spring的旅程-2
+3. [Spring的旅程-2](week1/osint/3/index.md)
 
 ## [AI](week1/ai)
 
 1. ez_pytorch
 2. Magical Large Potato!
-3. ~~[hd_pytorch?](week1/ai/3)~~
+3. ~~[hd_pytorch?](week1/ai/3/index.md)~~
