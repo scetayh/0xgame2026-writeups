@@ -38,7 +38,7 @@
 1. [signin](week1/reverse/1/index.md)
 2. [ez_upx](week1/reverse/2/index.md)
 3. [欸？云朵](week1/reverse/3/index.md)
-4. *[欸？云朵のrevenge](week1/reverse/4/index.md)*
+4. [欸？云朵のrevenge](week1/reverse/4/index.md)
 5. [旧时代的信号](week1/reverse/5/index.md)
 6. z3_solver
 7. Guess
