@@ -1,8 +1,8 @@
 # 0xGame 2026 个人解题报告仓库
 
-- [超链接文本](.) 表示已解且已写 Writeup 的题目。
-- ~~[带删除线的超链接文本](.)~~ 表示已解但未写 Writeup 的题目。
-- *[斜体超链接文本](.)* 表示尝试解题后失败的题目。
+- [超链接文本](README.md) 表示已解且已写 Writeup 的题目。
+- ~~[带删除线的超链接文本](README.md)~~ 表示已解但未写 Writeup 的题目。
+- *[斜体超链接文本](README.md)* 表示尝试解题后失败的题目。
 - 正常文本 表示未解的题目。
 
 ## [第一周](week1)
@@ -11,7 +11,7 @@
 
 1. [欢迎来到CTF的世界！](week1/multi-class/1/index.md)
 2. [奶蛙的博客](week1/multi-class/2/index.md)
-3. 粗心的小x
+3. [粗心的小x](week1/multi-class/3/index.md)
 
 ### [Web](week1/web)
 
@@ -39,21 +39,21 @@
 2. [ez_upx](week1/reverse/2/index.md)
 3. [欸？云朵](week1/reverse/3/index.md)
 4. *[欸？云朵のrevenge](week1/reverse/4/index.md)*
-5. 旧时代的信号
+5. [旧时代的信号](week1/reverse/5/index.md)
 6. z3_solver
 7. Guess
 8. ez_flower
 
 ## [Pwn](week1/pwn)
 
-1. *[亦步亦趋](week1/pwn/1/index.md)*
-2. [！？数学基础？！](week1/pwn/2/index.md)
-3. 两次回响
-4. 保持沉默
-5. 三扇门
-6. 大道至简
-7. 这怎么可以作为名字啊！
-8. [奇妙杂货铺](week1/pwn/8/index.md)
+1. [奇妙杂货铺](week1/pwn/1/index.md)
+2. *[亦步亦趋](week1/pwn/2/index.md)*
+3. [！？数学基础？！](week1/pwn/3/index.md)
+4. 两次回响
+5. 保持沉默
+6. 三扇门
+7. 大道至简
+8. 这怎么可以作为名字啊！
 
 ## Crypto
 
@@ -61,7 +61,7 @@
 2. RSA永恒花园
 3. 约会大作战
 4. 为美好的密码献上解密
-5. 天使大人
+5. [天使大人](week1/crypto/5/index.md)
 6. 深具传统的ECC之诞生
 7. 四月是你的谎言
 

@@ -24,9 +24,9 @@
 
 并保存三张图片为：
 
-- [`R0.png`](R0.png)
-- [`G0.png`](G0.png)
-- [`B0.png`](B0.png)
+- `R0.png`
+- `G0.png`
+- `B0.png`
 
 它们分别长这个样子：
 
@@ -44,15 +44,15 @@
 
 能够以 XOR 运算方式“交织三原色”。
 
-首先打开 [`R0.png`](R0.png) ，选择 Analyse > Image Combiner ，选取 [`G0.png`](G0.png) ，即可来到这个页面：
+首先打开 `R0.png` ，选择 Analyse > Image Combiner ，选取 `G0.png` ，即可来到这个页面：
 
 ![](7.png)
 
-保存为 [`R0XORG0.png`](R0XORG0.png) ：
+保存为 `R0XORG0.png` ：
 
 ![](R0XORG0.png)
 
-同样地，将 [`R0XORG0.png`](R0XORG0.png) 与 [`B0.png`](B0.png) 叠加，最终得到 [`R0XORG0XORB0.png`](R0XORG0XORB0.png) ：
+同样地，将 `R0XORG0.png` 与 `B0.png` 叠加，最终得到 `R0XORG0XORB0.png` ：
 
 ![](R0XORG0XORB0.png)
 

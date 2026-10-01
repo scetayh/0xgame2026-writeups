@@ -80,7 +80,7 @@ RhExDlhVDSdGGEJHKRBGGmpbGFkBMGBgLkhXTkg=
     *(_BYTE *)(a2 + i) = aVivo50[i % 6] ^ *(_BYTE *)(a1 + i);
 ```
 
-`^` 做异或运算而且又是循环，让人想到之前那个 [Interesting_ppt](../../misc/4/index.md) 里面的加密手段。这里看一下 `aVivo50` 是什么：
+`^` 做异或运算而且又是循环，让人想到之前那个《Interesting_ppt》里面的加密手段。这里看一下 `aVivo50` 是什么：
 
 ![](13.png)
 

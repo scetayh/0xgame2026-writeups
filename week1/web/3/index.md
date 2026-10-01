@@ -84,7 +84,7 @@ DANGEROUS_ATTRIBUTES = [
 ]
 ```
 
-也就是说，类似于 [渲染如呼吸一样简单](../1/index.md) 那一题，Python 的内置对象是可以访问的。那么首先想到的当然是 `os.environ.get("FLAG")` ，但显然我不能 `import os`，因为  `app.py` 里明令禁止了：
+也就是说，类似于《渲染如呼吸一样简单》那一题，Python 的内置对象是可以访问的。那么首先想到的当然是 `os.environ.get("FLAG")` ，但显然我不能 `import os`，因为  `app.py` 里明令禁止了：
 
 ```
     r'\bimport\s+os\b',
@@ -94,7 +94,7 @@ DANGEROUS_ATTRIBUTES = [
 
 ![](1.png)
 
-所以绕个弯子，由 `print` 出发，从 `__self__` 属性的词典里拉出 `__import__` 来，然后类似于 [渲染如呼吸一样简单](../1/index.md) ，获取环境变量即可：
+所以绕个弯子，由 `print` 出发，从 `__self__` 属性的词典里拉出 `__import__` 来，然后获取环境变量即可：
 
 ```python
 print(print.__self__.__dict__.get("__import__")("os").environ.get("FLAG"))

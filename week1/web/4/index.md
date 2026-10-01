@@ -88,7 +88,7 @@ http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=e
 http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=<JWT>
 ```
 
-也就是说当前的 token 肯定是无权限的，要换成 [JSON Web Tokens](https://www.jwt.io/) encode 过的 token 。直接删掉旧 token ，新的粘贴上去访问就行了：
+也就是说当前的 token 肯定是无权限的，要换成 encode 过的 token 。直接删掉旧 token ，新的粘贴上去访问就行了：
 
 ```
 http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZG1pbiJ9.8EpmITl1f-PdlStOLMQ0fn0vfU5avxMZNQybA9afVzY
