@@ -40,9 +40,9 @@
 3. [欸？云朵](week1/reverse/3/index.md)
 4. [欸？云朵のrevenge](week1/reverse/4/index.md)
 5. [旧时代的信号](week1/reverse/5/index.md)
-6. z3_solver
+6. [z3_solver](week1/reverse/6/index.md)
 7. Guess
-8. ez_flower
+8. *[ez_flower](week1/reverse/8/index.md)*
 
 ## [Pwn](week1/pwn)
 
@@ -59,16 +59,16 @@
 
 1. decode for love
 2. RSA永恒花园
-3. 约会大作战
+3. *[约会大作战](week1/crypto/3/index.md)*
 4. 为美好的密码献上解密
 5. [天使大人](week1/crypto/5/index.md)
-6. 深具传统的ECC之诞生
-7. 四月是你的谎言
+6. [深具传统的ECC之诞生](week1/crypto/6/index.md)
+7. [四月是你的谎言](week1/crypto/7/index.md)
 
 ## Osint
 
-1. 至此,我将独自前行...
-2. Spring的旅程-1
+1. [至此,我将独自前行...](week1/osint/1/index.md)
+2. [Spring的旅程-1](week1/osint/2/index.md)
 3. [Spring的旅程-2](week1/osint/3/index.md)
 
 ## [AI](week1/ai)
