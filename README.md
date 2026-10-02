@@ -21,7 +21,7 @@
 4. [错位的签名](week1/web/4/index.md)
 5. [一切的开始](week1/web/5/index.md)
 6. [ATP代码实验](week1/web/6/index.md)
-7. ~~[pollute the key](week1/web/7/index.md)~~
+7. [pollute the key](week1/web/7/index.md)
 
 ## [Misc](week1/misc)
 

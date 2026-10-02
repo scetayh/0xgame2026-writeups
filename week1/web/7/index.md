@@ -36,5 +36,4 @@
 
 ![](6.png)
 
-经过测试，这里面 `"nickname"` 和 `"phone"` 等等都可以改，但 `"role"` 试着改成 `"admin"` 不行。试一试 Python 对象属性：
-
+我看 `app.py` 里边有 JWT encode / decode ，每次
