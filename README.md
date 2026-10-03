@@ -42,12 +42,12 @@
 5. [旧时代的信号](week1/reverse/5/index.md)
 6. [z3_solver](week1/reverse/6/index.md)
 7. Guess
-8. *[ez_flower](week1/reverse/8/index.md)*
+8. *[ez_flower](week1/reverse/.8/index.md)*
 
 ## [Pwn](week1/pwn)
 
 1. [奇妙杂货铺](week1/pwn/1/index.md)
-2. *[亦步亦趋](week1/pwn/2/index.md)*
+2. *[亦步亦趋](week1/pwn/.2/index.md)*
 3. [！？数学基础？！](week1/pwn/3/index.md)
 4. 两次回响
 5. 保持沉默
@@ -59,7 +59,7 @@
 
 1. decode for love
 2. RSA永恒花园
-3. *[约会大作战](week1/crypto/3/index.md)*
+3. *[约会大作战](week1/crypto/.3/index.md)*
 4. 为美好的密码献上解密
 5. [天使大人](week1/crypto/5/index.md)
 6. [深具传统的ECC之诞生](week1/crypto/6/index.md)
