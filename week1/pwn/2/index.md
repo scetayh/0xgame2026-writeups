@@ -91,11 +91,11 @@ Now input your final Payload:
 
 查看 `win` ：
 
-![](1.png)
+![](1.jpg)
 
-![](2.png)
+![](2.jpg)
 
-![](3.png)
+![](3.jpg)
 
 一旦 `win` 结束，就会运行一个 Shell 。把返回地址改成后门 `win` 的地址，这样等某个特定函数结束的时候就会运行 `win` 了。
 

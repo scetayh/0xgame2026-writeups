@@ -31,15 +31,15 @@ qemu-system-x86_64 \
     -vga cirrus
 ```
 
-![](1.png)
+![](1.jpg)
 
-![](2.png)
+![](2.jpg)
 
 安装。
 
 （几分钟后……）
 
-![](3.png)
+![](3.jpg)
 
 DOS 启动正常。先关机：
 
@@ -78,6 +78,6 @@ attach~1.exe
 
 查看输出：
 
-![](4.png)
+![](4.jpg)
 
 从而得到 flag 为 `0xGame{JuS7_g1v3_16bit7t_@_try!!}` 。

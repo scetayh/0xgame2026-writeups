@@ -1,18 +1,18 @@
 # 错位的签名
 
-![](1.png)
+![](1.jpg)
 
 用户名是 `guest` ，~~根据数据库经验~~知道测试用户的密码是 `guest123` 。
 
 到处逛一逛：
 
-![](2.png)
+![](2.jpg)
 
-![](3.png)
+![](3.jpg)
 
-![](4.png)
+![](4.jpg)
 
-![](5.png)
+![](5.jpg)
 
 这里给出了公钥：
 
@@ -34,15 +34,15 @@ BQIDAQAB
 
 这种就是跟着搜索引擎就可以倒腾出来一点头绪的线索。搜进 [JSON Web Tokens](https://www.jwt.io/) ：
 
-![](6.png)
+![](6.jpg)
 
 可以看到有一个用于 Encode 的区域。
 
-![](7.png)
+![](7.jpg)
 
 点进去就来到：
 
-![](8.png)
+![](8.jpg)
 
 hint 说：
 
@@ -58,13 +58,13 @@ hint 说：
 }
 ```
 
-![](9.png)
+![](9.jpg)
 
 因为这是题目给出来的。
 
 然后就是把公钥复制进 Sign JWT 区域：
 
-![](10.png)
+![](10.jpg)
 
 右边就会吐出 token：
 
@@ -72,7 +72,7 @@ hint 说：
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZG1pbiJ9.8EpmITl1f-PdlStOLMQ0fn0vfU5avxMZNQybA9afVzY
 ```
 
-![](11.png)
+![](11.jpg)
 
 然后回到题供网页的《Flag 页面》，看到地址长这个样子：
 
@@ -80,7 +80,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZG1pbiJ9.8EpmITl1f-PdlStOLMQ0fn
 http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJndWVzdCIsInJvbGUiOiJndWVzdCIsInN1YiI6Imd1ZXN0IiwiZXhwIjoxNzkwNjc0Nzc3LCJuYmYiOjE3OTA2NzExMTd9.sDWbpS4RyE-hlsnqTr9TwL_Af2qOV5OV_5eX6qyJsznV7WziW-bOprewncKUr_Kgu6uvMc-hhRcJXcdFOY8fbEIFZ6YZmV25NdmxQCLp_c9IrlpXvGNW18gTYykKu3GxIahDmnMOAPhh0HfcYC_RRbyZ4f_0ARDOZHqYZHbrbYRm8jtC9n6la3093Xv4Pa5f-BFU-d0PXVu05gnSJjVUEwpaLWcm8XkQ1xY42wDsrkprCbSbeUIBzdPTIo1z2LTOW8nZeTP8i7mk9F_0GNiTkw24ZuywxM3587OiKAt_EKcvBv6SvUD_555zNLY0O8wPZRnhY7CyDWVZ5A-AXT8Qug
 ```
 
-![](12.png)
+![](12.jpg)
 
 格式是：
 
@@ -94,6 +94,6 @@ http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=<
 http://9080-8f7247c4-875d-4232-80be-e6155f674999.challenge.ctfplus.cn/flag?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJhZG1pbiJ9.8EpmITl1f-PdlStOLMQ0fn0vfU5avxMZNQybA9afVzY
 ```
 
-![](13.png)
+![](13.jpg)
 
 于是 flag 就是 `0xGame{ea59d8cb-c0f6-4834-b102-7bf600f876c6}` 。

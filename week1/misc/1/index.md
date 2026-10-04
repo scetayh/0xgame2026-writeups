@@ -2,11 +2,11 @@
 
 用 Wireshark 打开 `.pcap` ：
 
-![](1.png)
+![](1.jpg)
 
 用 `http` 过滤，一眼望去：
 
-![](2.png)
+![](2.jpg)
 
 `secret.zip` 要素察觉。
 

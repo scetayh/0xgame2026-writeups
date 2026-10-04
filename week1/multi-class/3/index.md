@@ -10,17 +10,17 @@
 
 然后看看 Git 仓库提交历史：
 
-![](1.png)
+![](1.jpg)
 
 逐一排查。紧接着在 refactor 那次提交 `chat.py` 差异中看到：
 
-![](2.png)
+![](2.jpg)
 
 有个 `sk-m2PzcGFydDI6dXBsT0BkX3ByMXY0dDM` 。
 
 而在初次提交 `.env` 中看到：
 
-![](3.png)
+![](3.jpg)
 
 有 `sk-W9kDcGFydDM6X3RoMW5nc190MF9nMXR9` 和 `sk-F4k3VGhpc19pc19hX2Zha2Vfa2V5` 。
 

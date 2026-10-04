@@ -2,19 +2,19 @@
 
 注册这样一个账号后来到个人中心：
 
-![](1.png)
+![](1.jpg)
 
-![](2.png)
+![](2.jpg)
 
 交点数据上去，看一看“保存修改”发的请求：
 
-![](3.png)
+![](3.jpg)
 
-![](4.png)
+![](4.jpg)
 
 - `/api/user/update`
 
-![](5.png)
+![](5.jpg)
 
 - `{"key":"email","value":"508228021@qq.com"}`
 
@@ -34,7 +34,7 @@
 }
 ```
 
-![](6.png)
+![](6.jpg)
 
 我看 `app.py` 里边有 JWT encode / decode ，每次都要调用 `_secret()` 函数，这个函数返回的是被 `import` 进来的全局变量 `SECRET_KEY` ，也就是说要想做点什么，首先要拿到管理员权限，也就是要拿到管理员的 JWT ，但显然我们不知道 `SECRET_KEY`。好在它作为全局变量可以修改：
 
@@ -93,7 +93,7 @@ __class__.__init__.__globals__.SECRET_KEY
 
 把这个作为键、任意字符串（这里用 `tarikko` ）作为值输进网页并“保存修改”：
 
-![](7.png)
+![](7.jpg)
 
 然后去 [JSON Web Tokens](https://www.jwt.io/) encode 一个 token 出来。看看后端要求哪些字段：
 
@@ -128,7 +128,7 @@ def api_order_buy():
 }
 ```
 
-![](8.png)
+![](8.jpg)
 
 拿到 token ：
 
@@ -138,17 +138,17 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjZXRheWgiLCJyb2xlIjoiYWR
 
 点进商店，打开开发者工具“网络”，修改 token 并刷新页面：
 
-![](9.png)
+![](9.jpg)
 
-![](10.png)
+![](10.jpg)
 
 拿到权限后向下翻：
 
-![](11.png)
+![](11.jpg)
 
 看看示例：
 
-![](12.png)
+![](12.jpg)
 
 ```json
 200 {"msg":"\u4e0b\u5355\u6210\u529f","ok":true,"order":{"items":["\u65d7\u8230\u7248\u673a\u68b0\u952e\u76d8","4K \u663e\u793a\u5668 27\u5bf8"],"order_id":"SO349066519","total":2798.0,"ts":1791001857,"username":"scetayh"}}

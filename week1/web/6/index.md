@@ -6,49 +6,49 @@
 
 实际上我还有第三个雷霆办法，如下图所示。
 
-![](1.png)
+![](1.jpg)
 
 <p align="center">
   <small>Control-C</small>
 </p>
 <br/>
 
-![](2.png)
+![](2.jpg)
 
 <p align="center">
   <small><kbd>links 'http://5000-4412cc87-c367-4d79-beaa-ab1929d1bb21.challenge.ctfplus.cn/'</kbd></small>
 </p>
 <br/>
 
-![](3.png)
+![](3.jpg)
 
 <p align="center">
   <small>ATP</small>
 </p>
 <br/>
 
-![](4.png)
+![](4.jpg)
 
 <p align="center">
   <small>Scroll down</small>
 </p>
 <br/>
 
-![](5.png)
+![](5.jpg)
 
 <p align="center">
   <small>Control-V</small>
 </p>
 <br/>
 
-![](6.png)
+![](6.jpg)
 
 <p align="center">
   <small>Enter</small>
 </p>
 <br/>
 
-![](7.png)
+![](7.jpg)
 
 <p align="center">
   <small>Done</small>
