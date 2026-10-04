@@ -163,6 +163,6 @@ with open("fixed.png","wb") as out:
     out.write(buf)
 ```
 
-运行后得到：
+运行后得到（这里为了压缩 PDF ，后来被我用 `ffmpeg` 转成了 JPG）：
 
-![](fixed.png)
+![](fixed.jpg)

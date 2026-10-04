@@ -6,7 +6,7 @@ i=1
 for md_file in *.md; do
     [[ "$md_file" = "README.md" ]] && \
         break
-    printf '%s\n\n%s\n\n%s' "---" "![](rank-week$i-1.png)" "![](rank-week$i-2.png)" >> "$md_file"
+    printf '%s\n\n%s\n\n%s' "---" "![](rank-week$i-1.jpg)" "![](rank-week$i-2.jpg)" >> "$md_file"
 
     pandoc "$md_file" \
         --standalone \

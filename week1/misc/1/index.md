@@ -1,12 +1,8 @@
 # ez_traffic
 
-用 Wireshark 打开 `.pcap` ：
+用 Wireshark 打开 `.pcap` ， `http` 过滤，一眼望去：
 
 ![](1.jpg)
-
-用 `http` 过滤，一眼望去：
-
-![](2.jpg)
 
 `secret.zip` 要素察觉。
 
