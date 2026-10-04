@@ -73,7 +73,7 @@ class User:
         # ...
 ```
 
-拿到他的 `__init__` 方法（ `profile` 也行）：
+拿到它的 `__init__` 方法（ `profile` 也行）：
 
 ```python
 me.__class__.__init__ # __init__
