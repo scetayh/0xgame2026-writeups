@@ -55,7 +55,7 @@
 7. 大道至简
 8. 这怎么可以作为名字啊！
 
-## Crypto
+## [Crypto](week1/crypto/)
 
 1. decode for love
 2. RSA永恒花园
@@ -65,7 +65,7 @@
 6. [深具传统的ECC之诞生](week1/crypto/6/index.md)
 7. [四月是你的谎言](week1/crypto/7/index.md)
 
-## Osint
+## [Osint](week1/osint/)
 
 1. [至此,我将独自前行...](week1/osint/1/index.md)
 2. [Spring的旅程-1](week1/osint/2/index.md)
