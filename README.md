@@ -76,3 +76,68 @@
 1. [ez_pytorch](week1/ai/1/index.md)
 2. [Magical Large Potato!](week1/ai/2/index.md)
 3. [hd_pytorch?](week1/ai/3/index.md)
+
+## [第二周](week2)
+
+### [Web](week2/web)
+
+1. [奶蛙的服务器](week2/web/1/index.md)
+2. [关注塔菲谢谢喵~](week2/web/2/index.md)
+3. ！？SPEL？！
+4. 千奇百怪的反序列化
+5. 让我解解你的json......不耗！
+6. 文件上传的千层套路
+7. 留言板
+8. 留言板 revenge
+
+## [Misc](week2/misc)
+
+1. ~~[小伊卡...不胖...不胖...（已黑化）](week2/misc/1/index.md)~~
+2. 取证大师！
+3. ez_ftp
+4. Zip医生
+5. 挽尊糕手
+6. 我的世界皓宸
+7. ez_chain
+8. [gift](week2/misc/8/index.md)
+9. Zip医生_revenge
+
+## [Reverse](week2/reverse)
+
+1. Hello World
+2. 原神模拟器
+3. 4410707
+4. Lights_on!
+5. 这个壳好像不太一样？
+6. Reflect
+
+## [Pwn](week2/pwn)
+
+1. 笼中鸟
+2. 跳一跳？
+3. 白驹过隙
+4. [login](week2/pwn/4/index.md)
+5. [调皮的文件](week2/pwn/5/index.md)
+6. 我附件呢？！
+7. 噫！好！我中啦！
+8. 勇士的冒险
+
+## [Crypto](week2/crypto/)
+
+1. ~~[群友群友群？](week2/crypto/1/index.md)~~
+2. 老师傅的波纹
+3. charlotte
+4. None game None life zero!
+5. 命运石之门
+6. 契约之吻
+7. 夏天仍未结束
+
+## [Osint](week2/osint/)
+
+1. Spring的旅程-3
+2. 天气之子?
+
+## [AI](week2/ai)
+
+1. tokenizer
+2. ~~[还有更优解吗？](week2/ai/2/index.md)~~
