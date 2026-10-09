@@ -1,0 +1,46 @@
+.text:00000000000EBD43                 lea     r10, [rbp+var_50]
+  ; R10 = RBP + var_50;
+.text:00000000000EBD47                 mov     [rbp+var_50], rax
+  ; R10 = *(uint64_t *)(RBP + var_50) = RAX = 0;
+.text:00000000000EBD4B                 jmp     loc_EBC79
+
+.text:00000000000EBC79 loc_EBC79:                              ; CODE XREF: execvpe+53B↓j
+.text:00000000000EBC79                 mov     qword ptr [r10+10h], 0
+  ; *(uint64_t *)(R10 + 0x10) = *(uint64_t *)(RBP + var_50 + 0x10) = RAX = 0;
+.text:00000000000EBC81
+.text:00000000000EBC81 loc_EBC81:                              ; CODE XREF: execvpe+4D0↓j
+.text:00000000000EBC81                 mov     rdx, [rbp+var_70]
+.text:00000000000EBC85                 mov     rsi, r10
+  ; *(uint64_t *)RSI = 0 // execve_arg_0
+.text:00000000000EBC88                 lea     rdi, aBinSh     ; "/bin/sh"
+.text:00000000000EBC8F                 mov     [rbp+var_78], r9
+.text:00000000000EBC93                 call    execve
+.text:00000000000EBC98                 mov     rsp, [rbp+var_78]
+.text:00000000000EBC9C                 mov     eax, fs:[r14]
+.text:00000000000EBCA0                 jmp     loc_EBB12
+
+.text:00000000000EBB12 loc_EBB12:                              ; CODE XREF: execvpe+490↓j
+.text:00000000000EBB12                                         ; execvpe+510↓j
+.text:00000000000EBB12                 cmp     eax, 0Dh
+.text:00000000000EBB15                 jz      loc_EBCA8
+.text:00000000000EBB1B                 jle     short loc_EBB50
+.text:00000000000EBB1D                 cmp     eax, 6Eh ; 'n'
+.text:00000000000EBB20                 jz      short loc_EBB2D
+.text:00000000000EBB22                 jle     short loc_EBB5B
+.text:00000000000EBB24                 cmp     eax, 74h ; 't'
+.text:00000000000EBB27                 jnz     loc_EB874
+
+.text:00000000000EB874 loc_EB874:                              ; CODE XREF: execvpe+181↓j
+.text:00000000000EB874                                         ; execvpe+195↓j ...
+.text:00000000000EB874                 mov     rax, [rbp+var_38]
+.text:00000000000EB878                 sub     rax, fs:28h
+.text:00000000000EB881                 jnz     loc_EBD50
+.text:00000000000EB887                 lea     rsp, [rbp-28h]
+.text:00000000000EB88B                 mov     eax, 0FFFFFFFFh
+.text:00000000000EB890                 pop     rbx
+.text:00000000000EB891                 pop     r12
+.text:00000000000EB893                 pop     r13
+.text:00000000000EB895                 pop     r14
+.text:00000000000EB897                 pop     r15
+.text:00000000000EB899                 pop     rbp
+.text:00000000000EB89A                 retn

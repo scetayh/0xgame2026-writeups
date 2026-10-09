@@ -1,0 +1,46 @@
+.text:00000000004012D8 ; =============== S U B R O U T I N E =======================================
+.text:00000000004012D8
+.text:00000000004012D8 ; Attributes: bp-based frame
+.text:00000000004012D8
+.text:00000000004012D8 ; void *async_copy(void *)
+.text:00000000004012D8                 public async_copy
+.text:00000000004012D8 async_copy      proc near               ; DATA XREF: main+114↓o
+.text:00000000004012D8
+.text:00000000004012D8 var_28          = qword ptr -28h
+.text:00000000004012D8 dest            = byte ptr -20h
+.text:00000000004012D8
+.text:00000000004012D8 ; __unwind {
+.text:00000000004012D8                 endbr64
+.text:00000000004012DC                 push    rbp
+.text:00000000004012DD                 mov     rbp, rsp
+.text:00000000004012E0                 sub     rsp, 30h
+.text:00000000004012E4                 mov     [rbp+var_28], rdi
+.text:00000000004012E8                 mov     eax, cs:copy_length
+.text:00000000004012EE                 cmp     eax, 20h ; ' '
+.text:00000000004012F1                 jg      short loc_40133C
+.text:00000000004012F3                 lea     rax, s          ; "[Thread] Length check passed! Preparing"...
+.text:00000000004012FA                 mov     rdi, rax        ; s
+.text:00000000004012FD                 call    _puts
+.text:0000000000401302                 mov     edi, 7A120h     ; useconds
+.text:0000000000401307                 call    _usleep
+.text:000000000040130C                 mov     eax, cs:copy_length
+.text:0000000000401312                 movsxd  rdx, eax        ; n
+.text:0000000000401315                 lea     rax, [rbp+dest]
+.text:0000000000401319                 lea     rcx, global_msg
+.text:0000000000401320                 mov     rsi, rcx        ; src
+.text:0000000000401323                 mov     rdi, rax        ; dest
+.text:0000000000401326                 call    _memcpy
+.text:000000000040132B                 lea     rax, aThreadCopyDone ; "[Thread] Copy done! Exiting thread..."
+.text:0000000000401332                 mov     rdi, rax        ; s
+.text:0000000000401335                 call    _puts
+.text:000000000040133A                 jmp     short loc_40134B
+.text:000000000040133C ; ---------------------------------------------------------------------------
+.text:000000000040133C
+.text:000000000040133C loc_40133C:                             ; CODE XREF: async_copy+19↑j
+.text:000000000040133C                 lea     rax, aThreadErrorLen ; "[Thread] Error: Length too large! Abort"...
+.text:0000000000401343                 mov     rdi, rax        ; s
+.text:0000000000401346                 call    _puts
+.text:000000000040134B
+.text:000000000040134B loc_40134B:                             ; CODE XREF: async_copy+62↑j
+.text:000000000040134B                 mov     eax, 0
+.text:0000000000401350                 leave
