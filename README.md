@@ -115,16 +115,16 @@
 
 1. 笼中鸟
 2. ~~[跳一跳？](week2/pwn/2/index.mc)~~
-3. *[白驹过隙](week2/pwn/3/index.md)*
+3. ~~[白驹过隙](week2/pwn/3/index.md)~~
 4. [login](week2/pwn/4/index.md)
 5. [调皮的文件](week2/pwn/5/index.md)
 6. 我附件呢？！
-7. 噫！好！我中啦！
+7. [噫！好！我中啦！](week2/pwn/7/index.md)
 8. 勇士的冒险
 
 ## [Crypto](week2/crypto/)
 
-1. ~~[群友群友群？](week2/crypto/1/index.md)~~
+1. [群友群友群？](week2/crypto/1/index.md)
 2. 老师傅的波纹
 3. charlotte
 4. None game None life zero!
@@ -134,10 +134,10 @@
 
 ## [Osint](week2/osint/)
 
-1. Spring的旅程-3
+1. [Spring的旅程-3](week2/osint/1/index.md)
 2. 天气之子?
 
 ## [AI](week2/ai)
 
 1. tokenizer
-2. ~~[还有更优解吗？](week2/ai/2/index.md)~~
+2. [还有更优解吗？](week2/ai/2/index.md)
