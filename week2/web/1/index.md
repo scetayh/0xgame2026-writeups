@@ -157,12 +157,14 @@ php-fpm started
 路径是 `/login.php` ，去 SSH 看：
 
 ```bash
-repair@dep-294a1fdb-886a-4e2a-b668-65f54d87396a-db66f8c77-jq7pk:~$ cat /var/www/html/login.php 
-# ...
+cat /var/www/html/login.php 
+```
+
+```php
 $adminPassword = 'chocolate9';
+```
 
-# ...
-
+```php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = (string)($_POST['username'] ?? '');
     $pass = (string)($_POST['password'] ?? '');
@@ -173,12 +175,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $error = '登录失败，请重新确认。';
 }
-
-# ...
 ```
 
-Username `admin` ，password `chocolate9` 。登进去：
+Username `admin` ，password `chocolate9` 。登进去得到 flag 为 `0xGame{6017d25a-9b72-4635-914c-7f086625d310}`：
 
 ![](3.png)
-
-Flag 为 `0xGame{6017d25a-9b72-4635-914c-7f086625d310}` 。

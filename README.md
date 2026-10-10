@@ -92,7 +92,7 @@
 
 ## [Misc](week2/misc)
 
-1. ~~[小伊卡...不胖...不胖...（已黑化）](week2/misc/1/index.md)~~
+1. [小伊卡...不胖...不胖...（已黑化）](week2/misc/1/index.md)
 2. 取证大师！
 3. ez_ftp
 4. Zip医生
@@ -113,14 +113,14 @@
 
 ## [Pwn](week2/pwn)
 
-1. *[笼中鸟](week2/pwn/1/index.md)*
-2. ~~[跳一跳？](week2/pwn/2/index.md)~~
+1. [笼中鸟](week2/pwn/1/index.md)
+2. [跳一跳？](week2/pwn/2/index.md)
 3. ~~[白驹过隙](week2/pwn/3/index.md)~~
 4. [login](week2/pwn/4/index.md)
 5. [调皮的文件](week2/pwn/5/index.md)
 6. 我附件呢？！
 7. [噫！好！我中啦！](week2/pwn/7/index.md)
-8. 勇士的冒险
+8. [勇士的冒险](week2/pwn/8/index.md)
 
 ## [Crypto](week2/crypto/)
 
