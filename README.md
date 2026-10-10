@@ -1,5 +1,14 @@
 # 0xGame 2026 个人解题报告仓库
 
+## 仓库结构与构建
+
+- `week1/`、`week2/`：每周题目源文件和附件。
+- `scripts/`：Markdown 汇总器、构建脚本和清理脚本。
+- `assets/`：构建用样式表和周榜图片。
+- `dist/`：生成的 Markdown、HTML 和 PDF。
+
+在仓库根目录或其他工作目录运行 `bash scripts/build.sh`，即可将两周报告和合并报告构建到 `dist/`。运行 `bash scripts/cleanup.sh` 只会清除这些生成文件。
+
 - [超链接文本](README.md) 表示已解且已写 Writeup 的题目。
 - ~~[带删除线的超链接文本](README.md)~~ 表示已解但未写 Writeup 的题目。
 - *[斜体超链接文本](README.md)* 表示尝试解题后失败的题目。

@@ -2,8 +2,9 @@
 from pathlib import Path
 import re
 
-root = Path("week2")
-output = Path("0xgame2026-writeup-week2.md")
+project_root = Path(__file__).resolve().parent.parent
+root = project_root / "week1"
+output = project_root / "dist" / "0xgame2026-writeup-week1.md"
 
 categories = [
     ("ai", "AI"),
@@ -19,7 +20,7 @@ categories = [
 out = []
 
 # 总标题
-out.append("# 0xGame 2026 Week 2 Writeup")
+out.append("# 0xGame 2026 Week 1 Writeup")
 out.append("")
 
 for category, title in categories:
@@ -44,7 +45,7 @@ for category, title in categories:
     def challenge_key(p):
         if p.name.isdigit():
             return (0, int(p.name))
-        return (2, p.name)
+        return (1, p.name)
 
     challenges.sort(key=challenge_key)
 
@@ -64,14 +65,14 @@ for category, title in categories:
                 r"^#\s+",
                 "### ",
                 lines[0],
-                count=2
+                count=1
             )
         else:
             # 如果没有一级标题，则使用目录名作为题目标题
             lines.insert(0, f"### {challenge_dir.name}")
 
         # 当前题目的目录
-        base = f"week2/{category}/{challenge_dir.name}"
+        base = f"../week1/{category}/{challenge_dir.name}"
 
         fixed_lines = []
 
@@ -106,6 +107,7 @@ for category, title in categories:
         out.append("")
 
 # 写入文件
+output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(
     "\n".join(out),
     encoding="utf-8"
