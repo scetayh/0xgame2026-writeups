@@ -113,8 +113,8 @@
 
 ## [Pwn](week2/pwn)
 
-1. 笼中鸟
-2. ~~[跳一跳？](week2/pwn/2/index.mc)~~
+1. *[笼中鸟](week2/pwn/1/index.md)*
+2. ~~[跳一跳？](week2/pwn/2/index.md)~~
 3. ~~[白驹过隙](week2/pwn/3/index.md)~~
 4. [login](week2/pwn/4/index.md)
 5. [调皮的文件](week2/pwn/5/index.md)
