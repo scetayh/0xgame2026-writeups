@@ -106,10 +106,12 @@
 3. ez_ftp
 4. Zip医生
 5. 挽尊糕手
-6. 我的世界皓宸
+6. [我的世界皓宸](week2/misc/6/index.md)
 7. ez_chain
 8. [gift](week2/misc/8/index.md)
 9. Zip医生_revenge
+10. [问卷](week2/misc/10/index.md)
+11. 我的世界皓宸_revenge
 
 ## [Reverse](week2/reverse)
 
@@ -124,10 +126,10 @@
 
 1. [笼中鸟](week2/pwn/1/index.md)
 2. [跳一跳？](week2/pwn/2/index.md)
-3. ~~[白驹过隙](week2/pwn/3/index.md)~~
+3. [白驹过隙](week2/pwn/3/index.md)
 4. [login](week2/pwn/4/index.md)
 5. [调皮的文件](week2/pwn/5/index.md)
-6. 我附件呢？！
+6. [我附件呢？！](week2/pwn/6/index.md)
 7. [噫！好！我中啦！](week2/pwn/7/index.md)
 8. [勇士的冒险](week2/pwn/8/index.md)
 

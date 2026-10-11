@@ -1,6 +1,6 @@
 # 调皮的文件
 
-上一题给了 libc ，这题不光没给 libc ，而且 `checksed` 检查结果显示：
+这题不光没给 libc ，而且 `checksed` 检查结果显示：
 
 ```bash
 (sage) scetayh@yuprae-gentoo ~/Projects/0xgame2026-writeups/week2/pwn/5 $ checksec --file=pwn
