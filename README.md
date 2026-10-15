@@ -106,7 +106,7 @@
 3. ez_ftp
 4. Zip医生
 5. 挽尊糕手
-6. [我的世界皓宸](week2/misc/6/index.md)
+6. *[我的世界皓宸](week2/misc/_6/index.md)*
 7. ez_chain
 8. [gift](week2/misc/8/index.md)
 9. Zip医生_revenge
